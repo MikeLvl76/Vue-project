@@ -1,12 +1,27 @@
 <script setup>
-    import { ref } from 'vue';
+import { ref } from 'vue';
 
-    const label = ref('');
-    const digit = ref(-1);
+const label = ref('');
+const digit = ref(-1);
+const operator = ref('');
 
-    const selectDigit = (value) => {
-        digit.value = value;
+const selectDigit = (value) => {
+    digit.value = value;
+    label.value += value.toString();
+}
+
+const selectOperator = (op) => {
+    operator.value = op;
+    label.value += op;
+}
+
+const updateCalculation = (event) => {
+    if (event === 'C') label.value = '';
+    else if (event === 'DEL') label.value = label.value.substring(0, label.value.length - 1);
+    else if (event === 'OK') {
+        console.log(label.value)
     }
+}
 
 </script>
 
@@ -31,9 +46,17 @@
                 <button @click="selectDigit(8)">8</button>
                 <button @click="selectDigit(9)">9</button>
             </div>
+            <div>
+                <button @click="selectOperator('+')">+</button>
+                <button @click="selectOperator('-')">-</button>
+                <button @click="selectOperator('x')">x</button>
+                <button @click="selectOperator('/')">/</button>
+            </div>
+            <div>
+                <button @click="updateCalculation('C')">C</button>
+                <button @click="updateCalculation('DEL')">DEL</button>
+                <button @click="updateCalculation('OK')">OK</button>
+            </div>
         </div>
-        <p>{{ digit }}</p>
     </div>
-    
-
 </template>
