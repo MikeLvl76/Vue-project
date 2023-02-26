@@ -29,12 +29,20 @@ const updateCalculation = (event) => {
 
 <template>
     <div>
-        <div>
-            <h1>Calculator</h1>
+        <div class="bg-gray-300 w-fit rounded-full mt-5 mx-auto px-2 py-2">
+            <h1 class="text-2xl text-center">Calculator</h1>
         </div>
-        <div>
-            <div>
+        <div class="border border-1 border-gray-700 w-96 rounded-lg px-2 py-2 mx-auto mt-5">
+            <div class="bg-gray-300 w-fit rounded-lg w-full h-12 mx-auto px-2 py-2">
                 <p>{{ label }}</p>
+            </div>
+            <div class="flex flex-row mt-5">
+                <button class="bg-gray-900 text-white rounded-lg w-full text-center"
+                    @click="updateCalculation('C')">C</button>
+                <button class="bg-red-500 text-white rounded-lg w-full text-center"
+                    @click="updateCalculation('DEL')">DEL</button>
+                <button class="bg-green-500 text-white rounded-lg w-full text-center"
+                    @click="updateCalculation('OK')">OK</button>
             </div>
             <div>
                 <button @click="selectDigit(0)">0</button>
@@ -54,11 +62,6 @@ const updateCalculation = (event) => {
                 <button @click="selectOperator('*')">x</button>
                 <button @click="selectOperator('/')">/</button>
             </div>
-            <div>
-                <button @click="updateCalculation('C')">C</button>
-                <button @click="updateCalculation('DEL')">DEL</button>
-                <button @click="updateCalculation('OK')">OK</button>
-            </div>
+
         </div>
-    </div>
-</template>
+</div></template>
