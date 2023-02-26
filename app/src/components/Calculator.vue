@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { calculate } from '../helpers/Calculation';
 
 const label = ref('');
 const digit = ref(-1);
@@ -7,6 +8,7 @@ const operator = ref('');
 
 const selectDigit = (value) => {
     digit.value = value;
+    if (label.value === 'Error') label.value = '';
     label.value += value.toString();
 }
 
@@ -19,7 +21,7 @@ const updateCalculation = (event) => {
     if (event === 'C') label.value = '';
     else if (event === 'DEL') label.value = label.value.substring(0, label.value.length - 1);
     else if (event === 'OK') {
-        console.log(label.value)
+        label.value = calculate(label.value);
     }
 }
 
@@ -49,7 +51,7 @@ const updateCalculation = (event) => {
             <div>
                 <button @click="selectOperator('+')">+</button>
                 <button @click="selectOperator('-')">-</button>
-                <button @click="selectOperator('x')">x</button>
+                <button @click="selectOperator('*')">x</button>
                 <button @click="selectOperator('/')">/</button>
             </div>
             <div>
