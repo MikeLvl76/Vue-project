@@ -49,7 +49,7 @@ const updateCalculation = (event) => {
                     <button class="bg-blue-500 text-white px-1 py-1 rounded-full w-8 mb-1 mt-1" @click="selectOperator('+')">+</button>
                     <button class="bg-blue-500 text-white px-1 py-1 rounded-full w-8 mb-1 mt-1" @click="selectOperator('-')">-</button>
                     <button class="bg-blue-500 text-white px-1 py-1 rounded-full w-8 mb-1 mt-1" @click="selectOperator('*')">x</button>
-                    <button class="bg-blue-500 text-white px-1 py-1 rounded-full w-8 mb-1 mt-1" @click="selectOperator('/')">/</button>
+                    <button class="bg-blue-500 text-white px-1 py-1 rounded-full w-8 mb-1 mt-1" @click="selectOperator('/')">÷</button>
                     <button class="bg-green-500 text-white rounded-full w-8"
                         @click="updateCalculation('=')">=</button>
                 </div>
