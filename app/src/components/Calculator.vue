@@ -29,8 +29,8 @@ const updateCalculation = (event) => {
 
 <template>
     <div>
-        <div class="border border-1 border-gray-700 w-64 rounded-lg px-2 py-2 mx-auto mt-5">
-            <div class="bg-gray-300 w-fit rounded-lg w-full h-12 mx-auto px-2 py-2">
+        <div class="border border-1 border-gray-700 w-64 rounded-lg px-2 py-2 mx-auto mt-5 bg-gray-500">
+            <div class="bg-white w-fit rounded-lg w-full h-12 mx-auto px-2 py-2">
                 <p class="text-right">{{ label }}</p>
             </div>
             <div class="flex flex-row space-x-5 mt-5 justify-center">
